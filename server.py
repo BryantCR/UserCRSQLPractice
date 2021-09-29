@@ -2,7 +2,7 @@ from flask import Flask, render_template, request, redirect, session
 from users_app import app
 from users_app.controllers import users_controller
 
-app = Flask( __name__ )
+app = Flask( __name__, template_folder='template')
 app.secret_key = "secret"
 
 @app.route( "/" )
@@ -12,11 +12,11 @@ def displayLogin():
 
 @app.route( "/users" )
 def displayAllUsers():
-    return render_template( "Read.html")
+    return render_template( "read.html")
 
 @app.route('/user/new')
 def new():
-    return render_template("Create.html")
+    return render_template("create.html")
 
 
 @app.route( "/users/new", methods=['POST'] )
@@ -33,9 +33,6 @@ def validateCredentials():
             return redirect( '/home' )
     session['loginError'] = "Wrong credentials provided."
     return redirect( '/users' )
-
-
-
 
 
 if __name__ == "__main__":
