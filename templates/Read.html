@@ -13,7 +13,6 @@
                     All Users
                 </h2>
             </div>
-            <form class="holdInputButton" action="/users/new" method="POST">
                 <table>
                     <thead>
                         <td>
@@ -33,16 +32,16 @@
                         {% for i in users: %}
                             <tr>                   
                                 <td>
-                                    {{users['id']}}
+                                    {{i.id}}
                                 </td>
                                 <td>
-                                    {{users['first_name']}} {{users['last_name']}}
+                                    {{i['first_name']}} {{i['last_name']}}
                                 </td>
                                 <td>
-                                    {{users['email']}}
+                                    {{i['email']}}
                                 </td>
                                 <td>
-                                    {{users['created_at']}}
+                                    {{i['created_at']}}
                                 </td>
                             </tr>
                         {% endfor %}
@@ -51,7 +50,6 @@
                 <div>
                     <a href="/users/new">Add a New User</a>
                 </div>
-            </form>
         </main>
     </body>
 </html>
