@@ -13,6 +13,9 @@ class User:
     def get_all_users(cls):
         query = "SELECT * FROM users;"
         results = connectToMySQL("users_db").query_db( query )
+        users = []
+        for user in results:
+            users.append( User( user['username'], user['password']) )
         return results
 
 # def __init__(self, data):

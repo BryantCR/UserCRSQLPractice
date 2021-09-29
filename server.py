@@ -5,20 +5,14 @@ from users_app.controllers import users_controller
 app = Flask( __name__ )
 app.secret_key = "secret"
 
-@app.route( "/", methods=['GET'] )
+@app.route( "/" )
 def displayLogin():
-    return render_template( "Read.html")
+    return redirect ('/users')
 
 
 @app.route( "/users", methods=['GET'] )
 def displayAllUsers():
-    # if 'id' in session:
-    #     id = session['id']
-    #     currentUserData = users[ id ]
-    #     print( currentUserData )
-        return render_template( "Read.html", users=currentUserData )
-    # else:
-    #     return "Error Loading The Page"
+    return render_template( "Read.html", users=User.get_all_users())
 
 
 @app.route( "/users/new", methods=['POST'] )
