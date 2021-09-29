@@ -2,12 +2,12 @@ from flask import render_template, request, redirect
 from users_app import app
 from users_app.models.User import User
 
-@app.route( "/users", methods=['GET'] )
+@app.route( "/hola", methods=['GET'] )
 def getAllUsers():
     users = User.get_all_users()
     return render_template( "users.html", users=users )
 
-@app.route( "/users/add", methods=['POST'] )
+@app.route( "/hola/add", methods=['POST'] )
 def addUser():
     username = request.form['username']
     password = request.form['password']
@@ -17,7 +17,7 @@ def addUser():
     print( result )
     return redirect( "/users" )
 
-@app.route( "/users/delete", methods=['POST'] )
+@app.route( "/hola/delete", methods=['POST'] )
 def deleteUser():
     username = request.form['deleteUsername']
     result = User.delete_user( username )
