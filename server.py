@@ -10,9 +10,13 @@ def displayLogin():
     return redirect ('/users')
 
 
-@app.route( "/users", methods=['GET'] )
+@app.route( "/users" )
 def displayAllUsers():
-    return render_template( "Read.html", users=User.get_all_users())
+    return render_template( "Read.html")
+
+@app.route('/user/new')
+def new():
+    return render_template("Create.html")
 
 
 @app.route( "/users/new", methods=['POST'] )
