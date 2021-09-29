@@ -8,16 +8,43 @@
     </head>
     <body>
         <main class="holdContent">
-            <div class="holdViewsCounter">
+            <div class="pageTittle">
                 <h2>
                     All Users
                 </h2>
             </div>
             <form class="holdInputButton" action="/guess" method="POST">
-                <input type="text" placeholder="Yor guess goes here!" id="userGuesser" name="userGuesser">
-                <button class="submit" type="submit">
-                    Submit
-                </button>
+                <table>
+                    <thead>
+                        <td>
+                            ID
+                        </td>
+                        <td>
+                            Full Name
+                        </td>
+                        <td>
+                            Email
+                        </td>
+                        <td>
+                            Created at
+                        </td>
+                    </thead>
+                    <tbody>
+                        {% for user2 in users1 %}
+                            <tr>                   
+                                <td>
+                                    {{user2['first_name']}}
+                                </td>
+                                <td>
+                                    {{user2['last_name']}}
+                                </td>
+                                <td>
+                                    {{user2['first_name']}} {{user2['last_name']}}
+                                </td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
             </form>
         </main>
     </body>
