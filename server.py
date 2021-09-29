@@ -1,6 +1,6 @@
 from flask import Flask, render_template, request, redirect, session
 from users_app import app
-from User import User
+from users_app.controllers import users_controller
 
 app = Flask( __name__ )
 app.secret_key = "secret"
