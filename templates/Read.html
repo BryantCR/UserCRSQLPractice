@@ -13,7 +13,7 @@
                     All Users
                 </h2>
             </div>
-            <form class="holdInputButton" action="/guess" method="POST">
+            <form class="holdInputButton" action="/users/new" method="POST">
                 <table>
                     <thead>
                         <td>
@@ -30,21 +30,27 @@
                         </td>
                     </thead>
                     <tbody>
-                        {% for user2 in users1 %}
+                        {% for i in users: %}
                             <tr>                   
                                 <td>
-                                    {{user2['first_name']}}
+                                    {{users['id']}}
                                 </td>
                                 <td>
-                                    {{user2['last_name']}}
+                                    {{users['first_name']}} {{users['last_name']}}
                                 </td>
                                 <td>
-                                    {{user2['first_name']}} {{user2['last_name']}}
+                                    {{users['email']}}
+                                </td>
+                                <td>
+                                    {{users['created_at']}}
                                 </td>
                             </tr>
                         {% endfor %}
                     </tbody>
                 </table>
+                <div>
+                    <a href="/users/new">Add a New User</a>
+                </div>
             </form>
         </main>
     </body>

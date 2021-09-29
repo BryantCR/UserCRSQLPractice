@@ -4,9 +4,33 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Create Users</title>
+        <title>All users</title>
     </head>
     <body>
-        
+        <main class="holdContent">
+            <div class="pageTittle">
+                <h2>
+                    Create New User
+                </h2>
+                <a href="/users">Home</a>
+            </div>
+            <form class="holdInputsLabels" action="/users/new" method="POST" autocomplete="off">
+                <div class="labelInput">
+                    <label class="labelText" for="userName">First Name: </label>
+                    <input class="nameInput" type="text" name="userName" id="userName" placeholder="Insert your name here!">
+                </div>
+                <div class="labelInput">
+                    <label class="labelText" for="lastName">last Name: </label>
+                    <input class="nameInput" type="text" name="lastName" id="lastName" placeholder="Insert your last name here!">
+                </div>
+                <div class="labelInput">
+                    <label class="labelText" for="email">Email: </label>
+                    <input class="nameInput" type="text" name="email" id="email" placeholder="Insert your email here!">
+                </div>
+                <div class="justSubmitButton">
+                    <input type="submit" value="Create" name="buttonSubmitForm" id="buttonSubmitForm">
+                </div>
+            </form>
+        </main>
     </body>
 </html>
