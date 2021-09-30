@@ -8,14 +8,14 @@
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
     </head>
     <body>
-        <main class="holdContent">
+        <main class="holdContent" style="padding: 10% 15%;">
             <div class="pageTittle">
                 <h2>
                     All Users
                 </h2>
             </div>
-                <table class="col-10 table-striped table-hover text-center">
-                    <thead>
+                <table class="table table-dark table-striped">
+                    <thead style="align-items: center; justify-content: center; text-align: center;">
                         <td class="col-auto px-5">
                             ID
                         </td>
@@ -32,16 +32,16 @@
                     <tbody>
                         {% for i in users1: %}
                             <tr>                   
-                                <td class="fs-4">
+                                <td class="fs-4" style="align-items: center; justify-content: center; text-align: center;">
                                     {{i['id']}}
                                 </td>
-                                <td class="fs-4">
+                                <td class="fs-4" style="align-items: center; justify-content: center; text-align: center;">
                                     {{i['first_name']}} {{i['last_name']}}
                                 </td>
-                                <td class="fs-4">
+                                <td class="fs-4" style="align-items: center; justify-content: center; text-align: center;">
                                     {{i['email']}}
                                 </td>
-                                <td class="fs-4">
+                                <td class="fs-4" style="align-items: center; justify-content: center; text-align: center;">
                                     {{i['created_at']}}
                                 </td>
                             </tr>
